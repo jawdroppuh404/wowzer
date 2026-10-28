@@ -55,6 +55,37 @@ export const Site: GlobalConfig = {
           ],
         },
         {
+          label: "Florida imagery",
+          fields: [
+            {
+              name: "neighborhoodPhoto",
+              type: "upload",
+              relationTo: "media",
+              admin: {
+                description:
+                  "Illustrative neighborhood panorama used throughout the service-area sections.",
+              },
+            },
+            {
+              name: "homePhoto",
+              type: "upload",
+              relationTo: "media",
+              admin: {
+                description:
+                  "Home exterior used in the homepage feature and Plumbing panel.",
+              },
+            },
+            {
+              name: "backyardPhoto",
+              type: "upload",
+              relationTo: "media",
+              admin: {
+                description: "Backyard lifestyle image used for Heating & Air.",
+              },
+            },
+          ],
+        },
+        {
           label: "Membership & financing",
           fields: [
             text("membershipTitle"),

@@ -22,6 +22,18 @@ export const getSite = cache(async (): Promise<SiteSettings> => {
       typeof site.van === "object" && site.van?.url
         ? site.van.url
         : site.vanPath || defaults.vanPath,
+    neighborhoodImage:
+      typeof site.neighborhoodPhoto === "object" && site.neighborhoodPhoto?.url
+        ? site.neighborhoodPhoto.url
+        : defaults.neighborhoodImage,
+    homeImage:
+      typeof site.homePhoto === "object" && site.homePhoto?.url
+        ? site.homePhoto.url
+        : defaults.homeImage,
+    backyardImage:
+      typeof site.backyardPhoto === "object" && site.backyardPhoto?.url
+        ? site.backyardPhoto.url
+        : defaults.backyardImage,
     promises: site.promises || defaults.promises,
     faqs: site.faqs || defaults.faqs,
   } as SiteSettings;

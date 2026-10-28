@@ -58,3 +58,7 @@ The supplied logo and van are preserved under public/images; WebP variants trim 
 ## Dependency notes
 
 Next.js and sharp were upgraded to patched releases; DOMPurify is overridden to 3.4.17. Remaining npm advisories concern upstream deepmerge (low) and the Drizzle development tool's esbuild chain (moderate); none are high or critical at verification. No dependency development server is exposed.
+
+## Florida imagery
+
+The neighborhood, house, and backyard photographs were generated at the owner's request. They depict illustrative South Florida settings rather than real customer jobs or named locations. Prompts and provenance are in `public/images/florida/PROVENANCE.md`. Replace their assignments in **Website & homepage → Florida imagery**. Responsive image delivery preserves the neutral color balance without a warm overlay.

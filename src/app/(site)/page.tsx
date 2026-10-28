@@ -72,13 +72,13 @@ export default async function Home() {
             <span /> Same-day appointments when available
           </div>
         </div>
-        <MotionScene van={site.vanPath} />
+        <MotionScene van={site.vanPath} backdrop={site.homeImage} />
         <a className="explore" href="#services">
           <ArrowDown size={16} /> A better day starts here
         </a>
       </section>
       <TrustStrip />
-      <Services services={services} />
+      <Services services={services} site={site} />
       <PromiseSection site={site} />
       <Membership site={site} />
       <AreaSection site={site} />

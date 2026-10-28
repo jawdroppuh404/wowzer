@@ -1,12 +1,12 @@
 :root {
-  --cream: #fffaf0;
+  --cream: #ffffff;
   --ink: #302043;
   --purple: #42266b;
   --purple-deep: #2d184d;
   --orange: #ffab28;
   --cyan: #71d2e8;
   --blue: #00769c;
-  --line: #ded6d0;
+  --line: #dde0e5;
   --font-body: "Manrope Variable", sans-serif;
   --font-display: "Barlow Condensed", sans-serif;
   --ease: cubic-bezier(0.16, 1, 0.3, 1);
@@ -208,7 +208,7 @@ button:hover > svg {
   position: sticky;
   top: 0;
   z-index: 50;
-  border-bottom: 1px solid #e6ded4;
+  border-bottom: 1px solid #e4e6eb;
 }
 .brand {
   width: 142px;
@@ -699,7 +699,7 @@ button:hover > svg {
   animation-delay: -4s;
 }
 .promise {
-  background: #f3eee7;
+  background: #f5f6f8;
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 11%;
@@ -870,7 +870,7 @@ button:hover > svg {
   font-size: 12px;
 }
 .area {
-  background: #e8f1ec;
+  background: #f2f7f6;
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 10%;
@@ -2256,5 +2256,186 @@ html[data-motion="paused"] .van-wrap {
   .service-hero .van-wrap {
     left: 0;
     width: 96%;
+  }
+}
+/* Neutral surfaces and Florida lifestyle photography. */
+.scene-photo {
+  position: absolute;
+  z-index: -1;
+  inset: 38px 6% 82px 10%;
+  overflow: hidden;
+  border-radius: 14px;
+  transform: rotate(-4deg);
+  box-shadow: 0 18px 40px #30204318;
+}
+.scene-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  transform: scale(1.04);
+}
+.with-photo .scene-word {
+  top: -12px;
+  opacity: 0.55;
+}
+.with-photo .orbit {
+  opacity: 0.35;
+}
+.with-photo .van-wrap {
+  top: 225px;
+}
+.with-photo .label-one {
+  top: 38px;
+  left: 2%;
+}
+.with-photo .label-two {
+  bottom: 12px;
+}
+.with-photo .road {
+  bottom: 26px;
+}
+.service-panel.photo-panel {
+  color: #fff;
+  isolation: isolate;
+}
+.service-photo {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -2;
+  transition: transform 1.2s var(--ease);
+}
+.photo-panel:after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: linear-gradient(
+    180deg,
+    rgba(15, 24, 30, 0.52) 0%,
+    rgba(15, 24, 30, 0.05) 38%,
+    rgba(15, 24, 30, 0.8) 100%
+  );
+}
+.photo-panel:hover .service-photo {
+  transform: scale(1.055);
+}
+.photo-panel .circle-arrow {
+  background: #fff;
+  border-color: #fff;
+  color: var(--ink);
+}
+.neighborhood-photo {
+  grid-column: 1/-1;
+  margin: 40px 0 0;
+  position: relative;
+  overflow: hidden;
+  border-radius: 14px;
+}
+.neighborhood-photo img {
+  width: 100%;
+  height: 380px;
+  object-fit: cover;
+  object-position: center 57%;
+  transition: transform 1.6s var(--ease);
+}
+.neighborhood-photo:hover img {
+  transform: scale(1.025);
+}
+.neighborhood-photo figcaption {
+  position: absolute;
+  bottom: 24px;
+  left: 28px;
+  margin-right: 24px;
+  padding: 10px 16px;
+  background: #fff;
+  color: var(--ink);
+  font-size: 12px;
+  font-weight: 700;
+  border-radius: 4px;
+}
+.closing {
+  background: #d4eef4;
+}
+.closing-marquee {
+  background: var(--purple);
+  color: #fff;
+  border-bottom: 0;
+}
+.service-hero.water {
+  background: #f1f8fa;
+}
+.service-hero.air {
+  background: #f5f4f8;
+}
+@media (min-width: 1600px) {
+  .with-photo .van-wrap {
+    top: 250px;
+  }
+}
+@media (max-width: 1150px) {
+  .with-photo .van-wrap {
+    top: 220px;
+  }
+  .scene-photo {
+    inset: 40px 5% 65px 8%;
+  }
+}
+@media (max-width: 900px) {
+  .with-photo .van-wrap {
+    top: 220px;
+  }
+  .scene-photo {
+    inset: 45px 3% 65px 7%;
+  }
+  .service-hero .with-photo .van-wrap {
+    top: 235px;
+  }
+  .neighborhood-photo img {
+    height: 310px;
+  }
+}
+@media (max-width: 600px) {
+  .scene-photo {
+    inset: 30px 9% 56px 12%;
+  }
+  .with-photo .van-wrap {
+    top: 145px;
+  }
+  .with-photo .label-one {
+    top: 24px;
+    left: 5%;
+  }
+  .with-photo .label-two {
+    bottom: 5px;
+  }
+  .with-photo .scene-word {
+    top: 0;
+  }
+  .service-hero .with-photo .van-wrap {
+    top: 140px;
+  }
+  .service-hero .scene-photo {
+    inset: 25px 9% 48px 12%;
+  }
+  .neighborhood-photo {
+    margin-top: 0;
+  }
+  .neighborhood-photo img {
+    height: 260px;
+    object-position: 60% center;
+  }
+  .neighborhood-photo figcaption {
+    left: 14px;
+    bottom: 14px;
+    font-size: 10px;
+    padding: 8px 11px;
+    margin-right: 14px;
+  }
+  .service-panel.photo-panel {
+    min-height: 400px;
   }
 }

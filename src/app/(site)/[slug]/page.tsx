@@ -53,6 +53,9 @@ export default async function ServicePage({
           </div>
         </div>
         <MotionScene
+          backdrop={
+            page.theme === "water" ? site.homeImage : site.backyardImage
+          }
           theme={page.theme}
           van={page.image || site.vanPath}
           alt={page.imageAlt}

@@ -484,6 +484,18 @@ export interface Site {
       }[]
     | null;
   ctaTitle: string;
+  /**
+   * Illustrative neighborhood panorama used throughout the service-area sections.
+   */
+  neighborhoodPhoto?: (number | null) | Media;
+  /**
+   * Home exterior used in the homepage feature and Plumbing panel.
+   */
+  homePhoto?: (number | null) | Media;
+  /**
+   * Backyard lifestyle image used for Heating & Air.
+   */
+  backyardPhoto?: (number | null) | Media;
   membershipTitle: string;
   membershipDescription: string;
   membershipPrice: string;
@@ -537,6 +549,9 @@ export interface SiteSelect<T extends boolean = true> {
         id?: T;
       };
   ctaTitle?: T;
+  neighborhoodPhoto?: T;
+  homePhoto?: T;
+  backyardPhoto?: T;
   membershipTitle?: T;
   membershipDescription?: T;
   membershipPrice?: T;

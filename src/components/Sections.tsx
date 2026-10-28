@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import {
   ArrowUpRight,
   Check,
@@ -29,7 +30,13 @@ export function TrustStrip() {
     </div>
   );
 }
-export function Services({ services }: { services: Service[] }) {
+export function Services({
+  services,
+  site,
+}: {
+  services: Service[];
+  site: SiteSettings;
+}) {
   return (
     <section className="services section-pad" id="services">
       <div className="section-heading reveal">
@@ -48,7 +55,7 @@ export function Services({ services }: { services: Service[] }) {
         {services.map((s) => (
           <Link
             href={`/${s.slug}`}
-            className={`service-panel ${s.theme} reveal`}
+            className={`service-panel photo-panel ${s.theme} reveal`}
             key={s.slug}
           >
             <div className="service-panel-top">
@@ -57,23 +64,19 @@ export function Services({ services }: { services: Service[] }) {
                 <ArrowUpRight />
               </span>
             </div>
-            <div className="service-art" aria-hidden="true">
-              {s.theme === "water" ? (
-                <>
-                  <i />
-                  <i />
-                  <i />
-                  <Droplets />
-                </>
-              ) : (
-                <>
-                  <div className="air-line line-one" />
-                  <div className="air-line line-two" />
-                  <div className="air-line line-three" />
-                  <Wind />
-                </>
-              )}
-            </div>
+            <Image
+              sizes="(max-width: 600px) 90vw, 45vw"
+              className="service-photo"
+              src={s.theme === "water" ? site.homeImage : site.backyardImage}
+              alt={
+                s.theme === "water"
+                  ? "Illustrative Florida home framed by palms"
+                  : "Illustrative Florida backyard with a shaded lanai"
+              }
+              width={1536}
+              height={1024}
+              loading="lazy"
+            />
             <div className="service-panel-bottom">
               <h3>
                 {s.theme === "water" ? (
@@ -192,6 +195,17 @@ export function AreaSection({ site }: { site: SiteSettings }) {
           </span>
         ))}
       </div>
+      <figure className="neighborhood-photo reveal">
+        <Image
+          sizes="90vw"
+          src={site.neighborhoodImage}
+          alt="Illustrative aerial view of a palm-lined South Florida neighborhood around a lake"
+          width={1536}
+          height={1024}
+          loading="lazy"
+        />
+        <figcaption>Room to unwind. A place to call home.</figcaption>
+      </figure>
     </section>
   );
 }

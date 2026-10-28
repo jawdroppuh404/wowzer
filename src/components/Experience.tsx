@@ -1,6 +1,7 @@
 "use client";
 import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import Script from "next/script";
 import {
   ArrowUpRight,
@@ -139,9 +140,11 @@ export function Header({ site }: { site: SiteSettings }) {
 export function MotionScene({
   van,
   theme = "home",
+  backdrop,
   alt = "The purple, orange and blue Wowzer service van",
 }: {
   van: string;
+  backdrop?: string;
   theme?: "home" | "water" | "air";
   alt?: string;
 }) {
@@ -184,7 +187,7 @@ export function MotionScene({
   return (
     <div
       ref={scene}
-      className={`motion-scene ${theme}`}
+      className={`motion-scene ${theme} ${backdrop ? "with-photo" : ""}`}
       aria-label="Wowzer service van"
     >
       <div className="scene-word" aria-hidden="true">
@@ -192,9 +195,23 @@ export function MotionScene({
       </div>
       <div className="orbit orbit-one" />
       <div className="orbit orbit-two" />
-      <div className="sun-disc" aria-hidden="true">
-        <div className="disc-inner" />
-      </div>
+      {backdrop ? (
+        <div className="scene-photo">
+          <Image
+            sizes="(max-width: 600px) 90vw, 45vw"
+            loading="eager"
+            src={backdrop}
+            alt="Illustrative South Florida suburban home with tropical landscaping"
+            width={1536}
+            height={1024}
+            fetchPriority="high"
+          />
+        </div>
+      ) : (
+        <div className="sun-disc" aria-hidden="true">
+          <div className="disc-inner" />
+        </div>
+      )}
       <div className="scene-spark spark-one" aria-hidden="true">
         <Plus />
       </div>

@@ -16,6 +16,9 @@ export type Service = {
   seoDescription: string;
 };
 export const defaults = {
+  neighborhoodImage: "/images/florida/neighborhood.webp",
+  homeImage: "/images/florida/home.webp",
+  backyardImage: "/images/florida/backyard.webp",
   phone: "656.240.8321",
   email: "info@callwowzer.com",
   address: "6802 Lakeview Center Drive, Unit 3-305, Tampa, FL 33619",
