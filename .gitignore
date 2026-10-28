@@ -1,0 +1,13 @@
+node_modules/
+.next/
+.vercel/
+.env*
+!.env.example
+*.tsbuildinfo
+.DS_Store
+playwright-report/
+test-results/
+.impeccable/
+.agents/
+.claude/
+skills-lock.json
